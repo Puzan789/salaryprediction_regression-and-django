@@ -1,0 +1,33 @@
+# Ignore virtual environment
+venv/
+
+# Ignore NumPy, Pandas, and scikit-learn directories
+# NumPy
+__pycache__/numpy/
+numpy/
+numpy*.so
+numpy*.pyd
+
+# Pandas
+__pycache__/pandas/
+pandas/
+pandas*.so
+pandas*.pyd
+
+# scikit-learn
+__pycache__/sklearn/
+sklearn/
+sklearn*.so
+sklearn*.pyd
+
+# Ignore any other environment files
+.env
+
+# Ignore IDE-specific files and directories
+.vscode/
+.idea/
+*.pyc
+*.pyo
+
+# Ignore Jupyter Notebook checkpoints
+.ipynb_checkpoints/

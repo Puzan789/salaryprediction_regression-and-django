@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>
+        Salary Prediction
+    </title>
+    <style>
+        /* styles.css */
+/* styles.css */
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Set the body height to the full viewport height */
+    margin: 0; /* Remove default margin */
+    background-color: #f7f7f7; /* Set a background color */
+}
+
+h2 {
+    font-size: 36px;
+    margin-bottom: 20px;
+    color: #333; /* Set heading color */
+}
+
+form {
+    margin-bottom: 20px;
+}
+
+input[type="number"] {
+    width: 200px;
+    padding: 10px;
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+button {
+    padding: 15px 30px;
+    font-size: 20px;
+    cursor: pointer;
+    background-color: #4caf50; /* Set button background color */
+    color: white; /* Set button text color */
+    border: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease; /* Add a smooth transition effect */
+}
+
+button:hover {
+    background-color: #45a049; /* Change button background color on hover */
+}
+
+#predicted-salary {
+    font-size: 24px;
+    color: #333; /* Set predicted salary text color */
+}
+
+.error-message {
+    color: red;
+    margin-top: 10px;
+}
+
+    </style>
+</head>
+<body>
+
+    <h2 style="text-align: center;">Salary Prediction</h2>
+    <form action=""> 
+        {{ context.fm.as_p }}
+        <button type="submit">Predict Salary</button>
+    </form>
+    <div id="predicted-salary">
+    
+    {% if context.predictedsalary %}
+        <h3>Predicted Salary: ${{ context.predictedsalary }}</h3>
+    {% endif %}
+    </div>
+
+    {% if context.fm.error_message %}
+        <p style="color: red;">{{ context.fm.error_message }}</p>
+    {% endif %}
+</body>
+</html>
